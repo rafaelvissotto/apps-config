@@ -1,0 +1,30 @@
+theme = "catppuccin_mocha"
+
+[editor]
+middle-click-paste = false
+auto-save = true
+true-color = true
+text-width = 120
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.statusline]
+left = ["mode", "spinner", "version-control"]
+center = ["file-name"]
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.file-picker]
+hidden = false
+max-depth = 7
+
+[editor.whitespace.render]
+tab = "all"
+
+[keys.normal]
+C-s = ":w"

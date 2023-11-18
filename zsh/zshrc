@@ -1,0 +1,26 @@
+export ZSH="$HOME/.config/zsh/oh-my-zsh"
+export ZSH_COMPDUMP="$ZSH/cache/.zcompdump-$HOST"
+export ZSH_CUSTOM="$HOME/.config/zsh/custom"
+export LANG=en_US.UTF-8
+export EDITOR='vim'
+export GPG_TTY=$(tty)
+
+ZSH_THEME="fwalch"
+HYPHEN_INSENSITIVE="true"
+COMPLETION_WAITING_DOTS="true"
+
+zstyle ':omz:update' mode reminder
+
+plugins=(
+    colored-man-pages
+    fzf
+    git
+    mise
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+)
+
+source "$ZSH/oh-my-zsh.sh"
+
+eval "$(~/.local/bin/mise activate zsh)"
+

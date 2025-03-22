@@ -4,3 +4,6 @@
 !/kitty/**
 !/helix/**
 !/fish/**
+!/wezterm/**
+!/starship/starship.toml
+

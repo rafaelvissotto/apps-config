@@ -1,9 +1,11 @@
 *
-!*/
 !.gitignore
-!/kitty/**
-!/helix/**
-!/fish/**
-!/wezterm/**
+
 !/starship/starship.toml
+
+!/wezterm/
+!/wezterm/**
+
+!/zsh/
+!/zsh/**
 

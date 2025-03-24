@@ -1,0 +1,23 @@
+export ZSH="$HOME/.config/zsh/oh-my-zsh"
+
+ZSH_THEME="fwalch"
+HYPHEN_INSENSITIVE="true"
+COMPLETION_WAITING_DOTS="true"
+
+zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+
+plugins=(
+	fzf
+	git
+	zsh-autosuggestions
+	zsh-syntax-highlighting
+)
+
+source $ZSH/oh-my-zsh.sh
+
+export LANG=en_US.UTF-8
+export EDITOR='nvim'
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
+
+eval "$(starship init zsh)"
+

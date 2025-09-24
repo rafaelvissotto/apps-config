@@ -15,12 +15,9 @@ plugins=(
     colored-man-pages
     fzf
     git
-    mise
     zsh-autosuggestions
     zsh-syntax-highlighting
 )
 
 source "$ZSH/oh-my-zsh.sh"
-
-eval "$(~/.local/bin/mise activate zsh)"
 

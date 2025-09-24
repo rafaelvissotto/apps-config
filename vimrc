@@ -1,4 +1,4 @@
-" Create symlink: ln -s .config/vimrc .vimrc
+" ln -s .config/vimrc .vimrc
 
 " Don't try to be vi compatible
 set nocompatible

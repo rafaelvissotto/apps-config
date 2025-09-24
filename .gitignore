@@ -1,6 +1,7 @@
 *
 !.gitignore
 
+!gitrc
 !vimrc
 
 !/Code/User/settings.json

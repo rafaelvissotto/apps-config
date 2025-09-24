@@ -1,0 +1,27 @@
+# git config --global include.path "~/.config/gitrc"
+[core]
+	editor = vim
+	pager = less
+[alias]
+	ad = add
+	br = branch
+	ch = checkout
+	co = commit
+	di = diff
+	fe = fetch
+	lg = log --oneline --pretty=format:\"%C(auto)%h%d %D %Cgreen%x09%an%Cblue%x09%ad%Creset%x09%s\"
+	pu = pull
+	re = rebase
+	st = status
+	up = push
+[push]
+	default = current
+[pager]
+	branch = false
+	log = false
+[init]
+	defaultBranch = main
+[pull]
+	rebase = true
+[rebase]
+	autoStash = true

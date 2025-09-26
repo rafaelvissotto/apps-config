@@ -9,7 +9,7 @@
         "command": "-workbench.action.terminal.toggleTerminal"
     },
     {
-        "key": "ctrl+f4",
+        "key": "ctrl+w",
         "command": "workbench.action.closeActiveEditor"
     },
     {

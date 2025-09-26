@@ -1,4 +1,6 @@
-export ZSH="$HOME/.config/zsh/oh-my-zsh"
+# source "$HOME/.config/zsh/zshrc"
+ZSH_CONFIG="$HOME/.config/zsh"
+export ZSH="$ZSH_CONFIG/oh-my-zsh"
 export ZSH_COMPDUMP="$ZSH/cache/.zcompdump-$HOST"
 export ZSH_CUSTOM="$HOME/.config/zsh/custom"
 export LANG=en_US.UTF-8
@@ -14,10 +16,29 @@ zstyle ':omz:update' mode reminder
 plugins=(
     colored-man-pages
     fzf
+    kubectl
     git
+    mise
     zsh-autosuggestions
     zsh-syntax-highlighting
 )
 
 source "$ZSH/oh-my-zsh.sh"
+source "$ZSH_CONFIG/zsh_aliases.sh"
+source "$ZSH_CONFIG/zsh_functions.sh"
+
+# Add virtualenv to prompt (function to it in zsh_functions)
+PROMPT+='%{$fg[magenta]%}$(virtualenv_info)%{$reset_color%}'
+
+# Hook to update kubectl context before each prompt
+if command -v kubectl > /dev/null; then
+    PROMPT_BASE="$PROMPT"
+    autoload -Uz add-zsh-hook
+    add-zsh-hook precmd update_kube_prompt
+fi
+
+# Load mise environment
+if command -v mise > /dev/null; then
+    eval "$(mise activate zsh)"
+fi
 

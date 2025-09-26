@@ -23,19 +23,24 @@ plugins=(
     zsh-syntax-highlighting
 )
 
+PROMPT_HOST=false
+PROMPT_KUBE=true
+PROMPT_VENV=true
+
 source "$ZSH/oh-my-zsh.sh"
 source "$ZSH_CONFIG/zsh_aliases.sh"
 source "$ZSH_CONFIG/zsh_functions.sh"
 
-# Add virtualenv to prompt (function to it in zsh_functions)
-PROMPT+='%{$fg[magenta]%}$(virtualenv_info)%{$reset_color%}'
+# Hook to update prompt with hostname, venv, kubectl
+## Doing this specially because of kubectl,
+## extensions like kube-ps1 rely on kubectl config current-context, which can be slow and is network dependent
+## I just want to show the current context according to my kube config file
+PROMPT_BASE="$PROMPT"
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd update_prompt
 
-# Hook to update kubectl context before each prompt
-if command -v kubectl > /dev/null; then
-    PROMPT_BASE="$PROMPT"
-    autoload -Uz add-zsh-hook
-    add-zsh-hook precmd update_kube_prompt
-fi
+# Hook to auto activate/deactivate python virtual envs
+#add-zsh-hook chpwd virtual_env_activate
 
 # Load mise environment
 if command -v mise > /dev/null; then

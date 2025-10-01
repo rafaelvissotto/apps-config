@@ -6,6 +6,7 @@ export ZSH_CUSTOM="$HOME/.config/zsh/custom"
 export LANG=en_US.UTF-8
 export EDITOR='vim'
 export GPG_TTY=$(tty)
+export PATH="$HOME/.local/bin:$PATH"
 
 ZSH_THEME="fwalch"
 HYPHEN_INSENSITIVE="true"

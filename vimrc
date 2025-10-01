@@ -20,7 +20,7 @@ filetype plugin indent on
 colorscheme slate
 
 " Allow mouse interaction
-set mouse=a
+"set mouse=a
 
 " Highlight cursor column
 set cursorline

@@ -3,7 +3,7 @@ local config = wezterm.config_builder()
 local act = wezterm.action
 
 config.color_scheme = 'Bright Lights'
-config.font = wezterm.font('FiraCode Nerd Font Mono')
+config.font = wezterm.font('Hack Nerd Font')
 config.font_size = 12
 config.hide_tab_bar_if_only_one_tab = true
 

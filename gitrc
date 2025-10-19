@@ -1,4 +1,6 @@
 # git config --global include.path "~/.config/gitrc"
+[init]
+        defaultBranch = main
 [core]
 	editor = vim
 	pager = less

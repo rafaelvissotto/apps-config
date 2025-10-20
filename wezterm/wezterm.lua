@@ -1,10 +1,13 @@
-local wezterm = require 'wezterm'
+local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 local act = wezterm.action
 
-config.color_scheme = 'Bright Lights'
-config.font = wezterm.font('Hack Nerd Font')
-config.font_size = 12
+local scheme = wezterm.color.get_builtin_schemes()["Bright Lights"]
+scheme.brights[1] = "Gray" -- great theme, but I cannot read commented lines...
+config.colors = scheme
+
+config.font = wezterm.font("Hack Nerd Font")
+config.font_size = 11
 config.hide_tab_bar_if_only_one_tab = true
 
 config.scrollback_lines = 10000
@@ -12,14 +15,39 @@ config.enable_scroll_bar = true
 
 config.keys = {
 	{
-		key = '(',
-		mods = 'CTRL|SHIFT',
-		action = act.SplitVertical { domain = 'CurrentPaneDomain' },
+		key = "(",
+		mods = "CTRL|SHIFT",
+		action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }),
 	},
 	{
-		key = ')',
-		mods = 'CTRL|SHIFT',
-		action = act.SplitHorizontal { domain = 'CurrentPaneDomain' },
+		key = ")",
+		mods = "CTRL|SHIFT",
+		action = act.SplitVertical({ domain = "CurrentPaneDomain" }),
+	},
+	{
+		key = "PageUp",
+		mods = "SHIFT",
+		action = act.ScrollByPage(-0.5),
+	},
+	{
+		key = "PageDown",
+		mods = "SHIFT",
+		action = act.ScrollByPage(0.5),
+	},
+	{
+		key = "UpArrow",
+		mods = "SHIFT",
+		action = act.ScrollByLine(-1),
+	},
+	{
+		key = "DownArrow",
+		mods = "SHIFT",
+		action = act.ScrollByLine(1),
+	},
+	{
+		key = "F",
+		mods = "CTRL|SHIFT",
+		action = act.Search({ Regex = "" }),
 	},
 }
 

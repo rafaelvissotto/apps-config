@@ -19,4 +19,10 @@
     branch = master
     ignore = none
     shallow = true
-
+[submodule "lazyvim"]
+    path = nvim
+    url = https://github.com/LazyVim/starter
+    branch = main
+    update = checkout
+    ignore = all
+    shallow = true

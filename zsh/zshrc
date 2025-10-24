@@ -1,4 +1,4 @@
-# source "$HOME/.config/zsh/zshrc"
+# echo 'source "$HOME/.config/zsh/zshrc"' >> ~/.zshrc
 ZSH_CONFIG="$HOME/.config/zsh"
 export ZSH="$ZSH_CONFIG/oh-my-zsh"
 export ZSH_COMPDUMP="$ZSH/cache/.zcompdump-$HOST"

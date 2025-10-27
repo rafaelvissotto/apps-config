@@ -14,13 +14,15 @@ config.window_padding = {
 	top = 0,
 	bottom = 0,
 }
-config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
+config.window_decorations = "RESIZE"
 config.enable_tab_bar = true
-config.hide_tab_bar_if_only_one_tab = false
-config.use_fancy_tab_bar = true
+config.hide_tab_bar_if_only_one_tab = true
+config.use_fancy_tab_bar = false
+config.tab_bar_at_bottom = true
 
 config.font = wezterm.font("Hack Nerd Font")
 config.font_size = 11
+config.default_cursor_style = "SteadyBar"
 
 config.scrollback_lines = 10000
 config.enable_scroll_bar = true

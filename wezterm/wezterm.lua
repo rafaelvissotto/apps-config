@@ -1,6 +1,13 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 local act = wezterm.action
+local mux = wezterm.mux
+
+-- open maximized
+wezterm.on('gui-startup', function(cmd)
+  local tab, pane, window = mux.spawn_window(cmd or {})
+  window:gui_window():maximize()
+end)
 
 local scheme = wezterm.color.get_builtin_schemes()["Bright Lights"]
 scheme.brights[1] = "Gray" -- great theme, but I cannot read commented lines...

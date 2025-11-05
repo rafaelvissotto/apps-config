@@ -2,10 +2,9 @@ use-grammars = { only = [
   "awk",
   "bash",
   "c",
-  "cpp",
   "cmake",
+  "cpp",
   "css",
-  "csv",
   "diff",
   "dockerfile",
   "elixir",
@@ -18,7 +17,6 @@ use-grammars = { only = [
   "ini",
   "java",
   "javascript",
-  "jinja",
   "json",
   "json5",
   "make",
@@ -27,16 +25,12 @@ use-grammars = { only = [
   "opencl",
   "pascal",
   "php-only",
-  "properties",
-  "protobuf",
   "python",
-  "qml",
   "r",
   "regex",
   "robot",
   "ruby",
   "rust",
-  "rust-format-args",
   "slint",
   "sql",
   "sshclientconfig",
@@ -51,24 +45,7 @@ use-grammars = { only = [
 ] }
 
 
-# BASH
-[language-server.bash-language-server]
-command = "bash-language-server"
-args = ["start"]
-
-
-# C, CPP
-[language-server.clangd]
-command = "clangd"
-
-
-# DOCKER
-[language-server.docker-language-server]
-command = "docker-language-server"
-args = ["start", "--stdio"]
-
-
-# HTML, CSS, MARKDOWN
+# HTML, CSS, MARKDOWN, JSON
 [[language]]
 name = "html"
 formatter = { command = 'prettier', args = ["--parser", "html"] }
@@ -78,12 +55,14 @@ formatter = { command = 'prettier', args = ["--parser", "css"] }
 [[language]]
 name = "markdown"
 formatter = { command = 'prettier', args = ["--parser", "markdown"] }
+[[language]]
+name = "json"
+formatter = { command = 'prettier', args = ["--parser", "json"] }
 
 
 # GO
 [[language]]
 name = "go"
-formatter = { command = "goimports" }
 
 [language-server.gopls]
 command = "gopls"
@@ -96,30 +75,10 @@ functionTypeParameters = true
 parameterNames = true
 rangeVariableTypes = true
 
-[language-server.golangci-lint-lsp]
-command = "golangci-lint-langserver"
-
-[language-server.golangci-lint-lsp.config]
-command = [
-  "golangci-lint",
-  "run",
-  "--output.json.path=stdout",
-  "--show-stats=false",
-  "--issues-exit-code=1",
-]
-
 
 # JAVASCRIPT, TYPESCRIPT
 [[language]]
 name = "javascript"
-language-servers = [
-  "typescript-language-server",
-  "vscode-eslint-language-server",
-]
-formatter = { command = 'prettier', args = ["--parser", "typescript"] }
-
-[[language]]
-name = "jsx"
 language-servers = [
   "typescript-language-server",
   "vscode-eslint-language-server",
@@ -134,88 +93,16 @@ language-servers = [
 ]
 formatter = { command = 'prettier', args = ["--parser", "typescript"] }
 
-[[language]]
-name = "tsx"
-language-servers = [
-  "typescript-language-server",
-  "vscode-eslint-language-server",
-]
-formatter = { command = 'prettier', args = ["--parser", "typescript"] }
-
 [language-server.typescript-language-server]
 command = "typescript-language-server"
 args = ["--stdio"]
 config.hostInfo = "helix"
 
-[language-server.typescript-language-server.config.typescript.inlayHints]
-includeInlayEnumMemberValueHints = true
-includeInlayFunctionLikeReturnTypeHints = true
-includeInlayFunctionParameterTypeHints = true
-includeInlayParameterNameHints = "all"
-includeInlayParameterNameHintsWhenArgumentMatchesName = true
-includeInlayPropertyDeclarationTypeHints = true
-includeInlayVariableTypeHints = true
-
-[language-server.typescript-language-server.config.javascript.inlayHints]
-includeInlayEnumMemberValueHints = true
-includeInlayFunctionLikeReturnTypeHints = true
-includeInlayFunctionParameterTypeHints = true
-includeInlayParameterNameHints = "all"
-includeInlayParameterNameHintsWhenArgumentMatchesName = true
-includeInlayPropertyDeclarationTypeHints = true
-includeInlayVariableTypeHints = true
-
-[language-server.svelteserver.config.configuration.typescript]
-inlayHints.parameterTypes.enabled = true
-inlayHints.variableTypes.enabled = true
-inlayHints.propertyDeclarationTypes.enabled = true
-inlayHints.functionLikeReturnTypes.enabled = true
-inlayHints.enumMemberValues.enabled = true
-inlayHints.parameterNames.enabled = "all"
-
-[language-server.svelteserver.config.configuration.javascript]
-inlayHints.parameterTypes.enabled = true
-inlayHints.variableTypes.enabled = true
-inlayHints.propertyDeclarationTypes.enabled = true
-inlayHints.functionLikeReturnTypes.enabled = true
-inlayHints.enumMemberValues.enabled = true
-inlayHints.parameterNames.enabled = "all"
-
-
-# JSON
-[[language]]
-name = "json"
-formatter = { command = 'prettier', args = ["--parser", "json"] }
-
-
-# PYTHON
-[[language]]
-name = "python"
-language-servers = ["pyright", "ruff"]
-
-[language-server.pyright.config.python.analysis]
-typeCheckingMode = "basic"
-
-[language-server.ruff]
-command = "ruff"
-args = ["server"]
-
-
-# RUST
-[language-server.rust-analyzer.config.check]
-command = "clippy"
-
 
 # SQL
 [[language]]
 name = "sql"
-formatter = { command = "sqlformat", args = ["--reindent", "--indent_width", "2", "--keywords", "upper", "--identifiers", "lower", "-"] }
-
-
-# TOML
-[[language]]
-name = "toml"
-formatter = { command = "taplo", args = ["fmt", "-"] }
+formatter = { command = "sqlformat", args = ["--reindent", "--indent_width", "4", "--keywords", "upper", "--identifiers", "lower", "-"] }
 
 
 # VUE
@@ -223,18 +110,3 @@ formatter = { command = "taplo", args = ["fmt", "-"] }
 name = "vue"
 formatter = { command = "prettier", args = ["--parser", "vue"] }
 language-servers = ["typescript-language-server"]
-
-[[language-server.typescript-language-server.config.plugins]]
-name = "@vue/typescript-plugin"
-location = "/home/rafaelv-ubuntu/.local/share/mise/installs/node/25.0.0/lib/@vue/language-server/"
-languages = ["vue"]
-
-
-# YAML
-[language-server.yaml-language-server.config.yaml]
-format = { enable = true }
-validation = true
-
-[language-server.yaml-language-server.config.yaml.schemas]
-"https://json.schemastore.org/github-workflow.json" = ".github/workflows/*.{yml,yaml}"
-"https://raw.githubusercontent.com/ansible-community/schemas/main/f/ansible-tasks.json" = "roles/{tasks,handlers}/*.{yml,yaml}"

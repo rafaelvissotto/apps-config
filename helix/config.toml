@@ -1,26 +1,78 @@
 theme = "bogster"
 
 [editor]
-line-number = "relative"
+auto-format = false
+bufferline = "multiple"
 
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"
 select = "underline"
 
+[editor.file-picker]
+follow-symlinks = false
+max-depth = 7
+
+[editor.statusline]
+left = ["mode", "spinner", "read-only-indicator", "file-modification-indicator", "version-control"]
+center = ["file-name"]
+right = ["diagnostics", "selections", "position", "register", "file-encoding", "file-type"]
+
+[keys.normal.space]
+x = ":toggle whitespace.render all none"
+z = ":toggle soft-wrap.enable"
+
 [keys.normal]
-C-s = ":write"
-C-o = "file_picker"
 F12 = "goto_definition"
 pageup = "page_cursor_half_up"
 pagedown = "page_cursor_half_down"
-S-up = "move_line_up"
-S-down = "move_line_down"
+tab = "indent"
+S-tab = "unindent"
+C-s = ":write"
+C-o = "file_picker"
+C-f = "search"
+C-right = "move_next_word_start"
+C-left = "move_prev_word_end"
 A-left = "goto_previous_buffer"
 A-right = "goto_next_buffer"
-C-f = "search"
 A-up = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
 A-down = ["extend_to_line_bounds", "delete_selection", "paste_after"]
-S-right = "move_next_word_start"
-S-left = "move_prev_word_end"
+S-up = "select_line_above"
+S-down = "select_line_below"
 S-g = "goto_file_end"
+
+[keys.insert]
+F12 = "goto_definition"
+pageup = "page_cursor_half_up"
+pagedown = "page_cursor_half_down"
+tab = "indent"
+S-tab = "unindent"
+C-s = ":write"
+C-o = "file_picker"
+C-f = "search"
+C-right = "move_next_word_start"
+C-left = "move_prev_word_end"
+A-left = "goto_previous_buffer"
+A-right = "goto_next_buffer"
+A-up = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before", "move_line_up"]
+A-down = ["extend_to_line_bounds", "delete_selection", "paste_after", "move_line_down"]
+S-up = "select_line_above"
+S-down = "select_line_below"
+
+[keys.select]
+F12 = "goto_definition"
+pageup = "page_cursor_half_up"
+pagedown = "page_cursor_half_down"
+tab = "indent"
+S-tab = "unindent"
+C-s = ":write"
+C-o = "file_picker"
+C-f = "search"
+C-right = "move_next_word_start"
+C-left = "move_prev_word_end"
+A-left = "goto_previous_buffer"
+A-right = "goto_next_buffer"
+A-up = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+A-down = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+S-up = "move_line_up"
+S-down = "move_line_down"

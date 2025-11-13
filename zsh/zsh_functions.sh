@@ -1,5 +1,10 @@
 function virtual_env_activate() {
     if [[ -z "$VIRTUAL_ENV" ]]; then
+        # Only apply if inside a trusted directory - `.../Documents/code/...` parent folder
+        if [[ "$PWD" != */Documents/code/* ]]; then
+            return
+        fi
+
         if [[ -d ./.venv && -f ./.venv/bin/activate ]]; then
             echo "Activating virtual env"
             source ./.venv/bin/activate

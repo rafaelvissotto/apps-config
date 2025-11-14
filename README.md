@@ -8,3 +8,8 @@ git fetch
 git checkout -t origin/main
 git submodule update --init --recursive --remote --rebase
 ```
+
+##### Ignore vscode settings changes locally
+```sh
+echo "/Code/**" >> .gitignore_local 
+```

@@ -1,15 +1,23 @@
 *
 !.gitignore
+!.gitignore_local
 !README.md
 
 !gitrc
 !vimrc
 
+!/alacritty/
+!/alacritty/**
+
 !/Code/User/settings.json
 !/Code/User/keybindings.json
 
 !/helix/
-!/helix/*.toml
+!/helix/**
+/helix/runtime
+
+!/tmux/
+!/tmux/**
 
 !/wezterm/
 !/wezterm/**

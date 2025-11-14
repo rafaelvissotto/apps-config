@@ -1,0 +1,31 @@
+# theme
+[general]
+import = [
+ "~/.config/alacritty/themes/dark.toml"
+ # "~/.config/alacritty/themes/bright.toml"
+]
+
+[cursor.style]
+shape = "Block"
+
+[cursor.vi_mode_style]
+shape = "Underline"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 11.25
+
+[font.normal]
+family = "Hack Nerd Font"
+style = "Regular"
+
+[scrolling]
+history = 10000
+
+[window]
+padding = { x = 4, y = 1 }
+
+[terminal.shell]
+program = "zsh"

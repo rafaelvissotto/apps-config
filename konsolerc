@@ -1,0 +1,19 @@
+[Desktop Entry]
+DefaultProfile=dark.profile
+
+[FileLocation]
+scrollbackUseCacheLocation=true
+scrollbackUseSystemLocation=false
+
+[General]
+ConfigVersion=1
+
+[MainWindow]
+MenuBar=Disabled
+
+[SearchSettings]
+SearchRegExpression=true
+
+[TabBar]
+NewTabBehavior=PutNewTabAfterCurrentTab
+TabBarPosition=Bottom

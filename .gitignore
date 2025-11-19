@@ -4,23 +4,14 @@
 !README.md
 
 !gitrc
+!konsolerc
 !vimrc
-
-!/alacritty/
-!/alacritty/**
 
 !/Code/User/settings.json
 !/Code/User/keybindings.json
 
-!/helix/
-!/helix/**
-/helix/runtime
-
-!/tmux/
-!/tmux/**
-
-!/wezterm/
-!/wezterm/**
+!/konsole/
+!/konsole/**
 
 !/zsh/
 !/zsh/**

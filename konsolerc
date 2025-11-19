@@ -14,6 +14,9 @@ MenuBar=Disabled
 [SearchSettings]
 SearchRegExpression=true
 
+[Shortcut Schemes]
+Current Scheme=custom.shortcuts
+
 [TabBar]
 NewTabBehavior=PutNewTabAfterCurrentTab
 TabBarPosition=Bottom

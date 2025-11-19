@@ -1,0 +1,13 @@
+[tools]
+go = "1"
+lazydocker = "latest"
+lazygit = "latest"
+node = "25"
+prettier = "3"
+ruff = "latest"
+rust = "1"
+rust-analyzer = "latest"
+taplo = "latest"
+tombi = "latest"
+usage = "2"
+uv = "latest"

@@ -2,6 +2,7 @@
 !.gitignore
 !.gitignore_local
 !README.md
+!TODO.md
 
 !gitrc
 !konsolerc
@@ -12,6 +13,9 @@
 
 !/konsole/
 !/konsole/**
+
+!/mise/
+!/mise/**
 
 !/zsh/
 !/zsh/**

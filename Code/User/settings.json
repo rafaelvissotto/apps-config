@@ -1,7 +1,7 @@
 {
   "cSpell.diagnosticLevel": "Hint",
   "editor.codeLensFontFamily": "'Hack Nerd Font', 'monospace'",
-  "editor.cursorSurroundingLines": 5,
+  "editor.cursorSurroundingLines": 10,
   "editor.fontFamily": "'Hack Nerd Font', monospace",
   "editor.formatOnSave": true,
   "editor.formatOnSaveMode": "modificationsIfAvailable",
@@ -33,5 +33,8 @@
   "workbench.editor.navigationScope": "editorGroup",
   "workbench.quickOpen.closeOnFocusLost": false,
   "workbench.secondarySideBar.defaultVisibility": "hidden",
-  "workbench.startupEditor": "none"
+  "workbench.startupEditor": "none",
+  "terminal.integrated.stickyScroll.enabled": false,
+  "editor.minimap.autohide": "mouseover",
+  "editor.cursorBlinking": "solid"
 }

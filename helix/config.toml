@@ -1,8 +1,13 @@
 theme = "bogster"
+# theme = "bogster_light"
 
 [editor]
 auto-format = false
 bufferline = "multiple"
+scrolloff = 10
+
+[editor.auto-save]
+focus-lost = true
 
 [editor.cursor-shape]
 insert = "bar"
@@ -16,11 +21,12 @@ max-depth = 7
 [editor.statusline]
 left = ["mode", "spinner", "read-only-indicator", "file-modification-indicator", "version-control"]
 center = ["file-name"]
-right = ["diagnostics", "selections", "position", "register", "file-encoding", "file-type"]
+right = ["diagnostics", "selections", "separator", "position", "position-percentage", "total-line-numbers", "register", "file-encoding", "separator", "file-type"]
 
 [keys.normal.space]
 x = ":toggle whitespace.render all none"
 z = ":toggle soft-wrap.enable"
+B = ":echo %sh{git log -n 1 --format=reference --no-patch -L %{cursor_line}:%{buffer_name}}"
 
 [keys.normal]
 F12 = "goto_definition"
@@ -28,36 +34,70 @@ pageup = "page_cursor_half_up"
 pagedown = "page_cursor_half_down"
 tab = "indent"
 S-tab = "unindent"
+X = "select_line_above"
 C-s = ":write"
 C-o = "file_picker"
-C-f = "search"
+C-f = ["move_prev_word_start", "move_next_word_end", "search_selection", "search"]
+C-q = ":buffer-close"
+C-d = ["extend_to_line_bounds", "save_selection", "yank", "paste_after"]
+C-a = "select_all"
+C-I = ":fmt"
+C-up = "scroll_up"
+C-down = "scroll_down"
 C-right = "move_next_word_start"
 C-left = "move_prev_word_end"
+C-pageup = "goto_previous_buffer"
+C-pagedown = "goto_next_buffer"
+C-home = "goto_file_start"
+C-end = "goto_file_end"
 A-left = "jump_backward"
 A-right = "jump_forward"
 A-up = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
 A-down = ["extend_to_line_bounds", "delete_selection", "paste_after"]
-S-up = "select_line_above"
-S-down = "select_line_below"
+S-up = "extend_line_up"
+S-down = "extend_line_down"
+S-left = "extend_prev_word_end"
+S-right = "extend_next_word_end"
+S-home = "extend_to_line_start"
+S-end = "extend_to_line_end"
+S-C-home = "extend_to_file_start"
+S-C-end = "extend_to_file_end"
+S-pageup = ["select_mode", "page_cursor_half_up"]
+S-pagedown = ["select_mode", "extend_line_down"]
 S-g = "goto_file_end"
 
 [keys.insert]
 F12 = "goto_definition"
 pageup = "page_cursor_half_up"
 pagedown = "page_cursor_half_down"
-tab = "indent"
-S-tab = "unindent"
 C-s = ":write"
 C-o = "file_picker"
-C-f = "search"
+C-f = ["move_prev_word_start", "move_next_word_end", "search_selection", "search"]
+C-q = ":buffer-close"
+C-d = ["extend_to_line_bounds", "save_selection", "yank", "paste_after"]
+C-up = "scroll_up"
+C-down = "scroll_down"
 C-right = "move_next_word_start"
 C-left = "move_prev_word_end"
+C-pageup = "goto_previous_buffer"
+C-pagedown = "goto_next_buffer"
+C-home = "goto_file_start"
+C-end = "goto_file_end"
 A-left = "jump_backward"
 A-right = "jump_forward"
 A-up = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before", "move_line_up"]
 A-down = ["extend_to_line_bounds", "delete_selection", "paste_after", "move_line_down"]
 S-up = "select_line_above"
 S-down = "select_line_below"
+S-left = "extend_prev_word_end"
+S-right = "extend_next_word_end"
+S-home = "extend_to_line_start"
+S-end = "extend_to_line_end"
+S-C-home = "extend_to_file_start"
+S-C-end = "extend_to_file_end"
+S-pageup = ["select_mode", "page_cursor_half_up"]
+S-pagedown = ["select_mode", "extend_line_down"]
+S-g = "goto_file_end"
 
 [keys.select]
 F12 = "goto_definition"
@@ -65,14 +105,34 @@ pageup = "page_cursor_half_up"
 pagedown = "page_cursor_half_down"
 tab = "indent"
 S-tab = "unindent"
+X = "select_line_above"
 C-s = ":write"
 C-o = "file_picker"
-C-f = "search"
+C-f = ["move_prev_word_start", "move_next_word_end", "search_selection", "search"]
+C-q = ":buffer-close"
+C-d = ["extend_to_line_bounds", "save_selection", "yank", "paste_after"]
+C-a = "select_all"
+C-I = ":fmt"
+C-up = "scroll_up"
+C-down = "scroll_down"
 C-right = "move_next_word_start"
 C-left = "move_prev_word_end"
+C-pageup = "goto_previous_buffer"
+C-pagedown = "goto_next_buffer"
+C-home = "goto_file_start"
+C-end = "goto_file_end"
 A-left = "jump_backward"
 A-right = "jump_forward"
 A-up = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
 A-down = ["extend_to_line_bounds", "delete_selection", "paste_after"]
-S-up = "move_line_up"
-S-down = "move_line_down"
+S-up = "select_line_above"
+S-down = "select_line_below"
+S-left = "extend_prev_word_end"
+S-right = "extend_next_word_end"
+S-home = "extend_to_line_start"
+S-end = "extend_to_line_end"
+S-C-home = "extend_to_file_start"
+S-C-end = "extend_to_file_end"
+S-pageup = ["select_mode", "page_cursor_half_up"]
+S-pagedown = ["select_mode", "extend_line_down"]
+S-g = "goto_file_end"

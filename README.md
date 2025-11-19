@@ -24,7 +24,8 @@ ln -s ~/.config/konsole/custom.shortcuts ~/.local/share/konsole/shortcuts/custom
 ##### Ignore vscode settings changes locally
 
 ```sh
-echo "/Code/**" >> .gitignore_local 
+echo "/Code/**" >> ~/.config/.git/info/exclude
+git update-index --skip-worktree Code/User/settings.json
 ```
 
 # List of tools

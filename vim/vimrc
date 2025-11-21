@@ -1,0 +1,35 @@
+" ln -s ~/.config/vim/vimrc ~/.vimrc
+
+" Don't try to be vi compatible
+set nocompatible
+
+" Helps force plugins to load correctly when it is turned back on below
+filetype off
+
+" Load plugins here
+
+" Turn on syntax highlighting
+syntax on
+
+" For plugins to load correctly
+filetype plugin indent on
+
+if filereadable(expand("~/.config/vim/behavior.vim"))
+    source ~/.config/vim/behavior.vim
+endif
+
+if filereadable(expand("~/.config/vim/mappings.vim"))
+    source ~/.config/vim/mappings.vim
+endif
+
+if filereadable(expand("~/.config/vim/persistency.vim"))
+    source ~/.config/vim/persistency.vim
+endif
+
+if filereadable(expand("~/.config/vim/statusbar.vim"))
+    source ~/.config/vim/statusbar.vim
+endif
+
+if filereadable(expand("~/.config/vim/explorer.vim"))
+    source ~/.config/vim/explorer.vim
+endif

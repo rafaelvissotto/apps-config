@@ -6,7 +6,6 @@
 
 !gitrc
 !konsolerc
-!vimrc
 
 !/Code/User/settings.json
 !/Code/User/keybindings.json
@@ -16,6 +15,9 @@
 
 !/mise/
 !/mise/**
+
+!/vim/
+!/vim/**
 
 !/zsh/
 !/zsh/**

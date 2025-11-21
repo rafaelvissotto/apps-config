@@ -14,7 +14,7 @@ git submodule update --init --recursive --remote --rebase
 # git config
 git config --global include.path "~/.config/gitrc"
 # vim config
-ln -s ~/.config/vimrc ~/.vimrc
+ln -s ~/.config/vim/vimrc ~/.vimrc
 # konsole profiles
 ln -s ~/.config/konsole/dark.profile ~/.local/share/konsole/dark.profile
 ln -s ~/.config/konsole/light.profile ~/.local/share/konsole/light.profile

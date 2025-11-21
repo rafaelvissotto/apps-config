@@ -1,5 +1,5 @@
 [Desktop Entry]
-DefaultProfile=dark.profile
+DefaultProfile=light.profile
 
 [FileLocation]
 scrollbackUseCacheLocation=true
@@ -16,6 +16,9 @@ SearchRegExpression=true
 
 [Shortcut Schemes]
 Current Scheme=custom.shortcuts
+
+[SplitView]
+SplitViewVisibility=AlwaysHideSplitHeader
 
 [TabBar]
 NewTabBehavior=PutNewTabAfterCurrentTab

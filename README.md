@@ -15,8 +15,9 @@ git submodule update --init --recursive --remote --rebase
 git config --global include.path "~/.config/gitrc"
 # vim config
 ln -s ~/.config/vimrc ~/.vimrc
-# konsole profile
+# konsole profiles
 ln -s ~/.config/konsole/dark.profile ~/.local/share/konsole/dark.profile
+ln -s ~/.config/konsole/light.profile ~/.local/share/konsole/light.profile
 # konsole shortcuts
 ln -s ~/.config/konsole/custom.shortcuts ~/.local/share/konsole/shortcuts/custom.shortcuts
 ```

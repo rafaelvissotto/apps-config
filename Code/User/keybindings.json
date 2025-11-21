@@ -35,5 +35,13 @@
         "key": "browserforward",
         "command": "-workbench.action.navigateForward",
         "when": "canNavigateForward"
+    },
+    {
+        "key": "ctrl+shift+,",
+        "command": "workbench.action.openSettingsJson"
+    },
+    {
+        "key": "ctrl+k ctrl+shift+s",
+        "command": "workbench.action.openDefaultKeybindingsFile"
     }
 ]

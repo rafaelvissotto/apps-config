@@ -1,3 +1,8 @@
+function clip_last() {
+    # last comand to clipboard (wayland)
+    wl-copy "$(fc -nl -1)"
+}
+
 function virtual_env_activate() {
     if [[ -z "$VIRTUAL_ENV" ]]; then
         # Only apply if inside a trusted directory - `.../Documents/code/...` parent folder

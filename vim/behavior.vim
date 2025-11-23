@@ -3,6 +3,11 @@ let &t_SI = "\e[6 q"  " Insert mode - bar
 let &t_EI = "\e[2 q"  " Normal mode - block
 let &t_SR = "\e[4 q"  " Replace mode - underline
 
+" make upper case variants behave as normal lower case command
+cabbr Wq wq
+cabbr W w
+cabbr Q q
+
 " keep 10 lines above/below cursor
 set scrolloff=10               
 

@@ -22,6 +22,13 @@ ln -s ~/.config/konsole/light.profile ~/.local/share/konsole/light.profile
 ln -s ~/.config/konsole/custom.shortcuts ~/.local/share/konsole/shortcuts/custom.shortcuts
 ```
 
+##### Konsole wrapper to follow plasma theme
+```sh
+ln -s ~/.config/konsole/wrapper.sh ~/.local/bin/konsole
+```
+Also change in the application menu from plasma to ~/.local/bin/konsole,
+otherwise it points to /usr/bin/konsole
+
 ##### Ignore vscode settings changes locally
 
 ```sh

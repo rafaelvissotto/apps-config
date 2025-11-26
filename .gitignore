@@ -7,8 +7,7 @@
 !gitrc
 !konsolerc
 
-!/Code/User/settings.json
-!/Code/User/keybindings.json
+!/Code/User/*.json
 
 !/konsole/
 !/konsole/**

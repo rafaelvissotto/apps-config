@@ -36,5 +36,7 @@
   "workbench.startupEditor": "none",
   "terminal.integrated.stickyScroll.enabled": false,
   "editor.minimap.autohide": "mouseover",
-  "editor.cursorBlinking": "solid"
+  "editor.cursorBlinking": "solid",
+  "workbench.preferredLightColorTheme": "Solarized Light",
+  "github.copilot.chat.agent.currentEditorContext.enabled": false
 }

@@ -1,1 +1,1 @@
-alias ip="ip -c"
+alias ip='ip -c'

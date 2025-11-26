@@ -56,6 +56,7 @@ package manager (apt, dnf, pacman).
 
 ```sh
 git \
+trash-cli \
 vim \
 zsh
 ```

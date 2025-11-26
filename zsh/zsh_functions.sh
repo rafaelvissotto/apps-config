@@ -3,6 +3,38 @@ function clip_last() {
     wl-copy "$(fc -nl -1)"
 }
 
+function rm() {
+    # Check each argument
+    for arg in "$@"; do
+        # Skip flags
+        [[ "$arg" =~ ^- ]] && continue
+
+        # Block home directory attempts
+        if [ "$arg" = "~" ] || [ "$arg" = "$HOME" ] || [ "$arg" = "~/" ]; then
+            echo "BLOCKED: Refusing to remove home directory ($arg)"
+            echo "This would delete your entire user directory including trash."
+            return 1
+        fi
+
+        # Block root directory attempts
+        if [ "$arg" = "/" ]; then
+            echo "BLOCKED: Refusing to remove root directory"
+            echo "This would delete your entire system."
+            return 1
+        fi
+
+        # Expand tilde and check resolved path
+        local expanded_path="${arg/#\~/$HOME}"
+        if [ "$expanded_path" = "$HOME" ]; then
+            echo "BLOCKED: Refusing to remove home directory"
+            return 1
+        fi
+    done
+
+    # If checks pass, use trash-put for safe deletion
+    command trash-put "$@"
+}
+
 function virtual_env_activate() {
     if [[ -z "$VIRTUAL_ENV" ]]; then
         # Only apply if inside a trusted directory - `.../Documents/code/...` parent folder

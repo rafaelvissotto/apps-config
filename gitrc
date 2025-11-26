@@ -1,9 +1,4 @@
 # git config --global include.path "~/.config/gitrc"
-[init]
-        defaultBranch = main
-[core]
-	editor = vim
-	pager = less
 [alias]
 	ad = add
 	br = branch
@@ -16,14 +11,19 @@
 	re = rebase
 	st = status
 	up = push
-[push]
-	default = current
+[core]
+	editor = vim
+	pager = less
+[format]
+	pretty = oneline
+[init]
+	defaultBranch = main
 [pager]
 	branch = false
 	log = false
-[init]
-	defaultBranch = main
 [pull]
 	rebase = true
+[push]
+	default = current
 [rebase]
 	autoStash = true

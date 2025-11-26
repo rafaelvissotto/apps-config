@@ -10,19 +10,30 @@ git submodule update --init --recursive --remote --rebase
 ```
 
 ### Configuring tools
+
 ```sh
+# zsh
+echo 'source "$HOME/.config/zsh/zshrc"' >> ~/.zshrc
+
+# load mise shims
+echo 'export PATH="$HOME/.local/share/mise/shims:$PATH"' >> ~/.zprofile
+
 # git config
 git config --global include.path "~/.config/gitrc"
+
 # vim config
 ln -s ~/.config/vim/vimrc ~/.vimrc
+
 # konsole profiles
 ln -s ~/.config/konsole/dark.profile ~/.local/share/konsole/dark.profile
 ln -s ~/.config/konsole/light.profile ~/.local/share/konsole/light.profile
+
 # konsole shortcuts
 ln -s ~/.config/konsole/custom.shortcuts ~/.local/share/konsole/shortcuts/custom.shortcuts
 ```
 
 ##### Konsole wrapper to follow plasma theme
+
 ```sh
 ln -s ~/.config/konsole/wrapper.sh ~/.local/bin/konsole
 ```
@@ -62,6 +73,7 @@ konsole
 Tools that require may require some alternative install method.
 
 ```sh
-docker  # or podman
+# podman
+docker \ 
 mise
 ```

@@ -4,7 +4,7 @@ function clip_last() {
 }
 
 function rm() {
-    # Check each argument
+    # Wrapper to make rm safer by using trash-put
     for arg in "$@"; do
         # Skip flags
         [[ "$arg" =~ ^- ]] && continue
@@ -33,27 +33,6 @@ function rm() {
 
     # If checks pass, use trash-put for safe deletion
     command trash-put "$@"
-}
-
-function virtual_env_activate() {
-    if [[ -z "$VIRTUAL_ENV" ]]; then
-        # Only apply if inside a trusted directory - `.../Documents/code/...` parent folder
-        if [[ "$PWD" != */Documents/code/* ]]; then
-            return
-        fi
-
-        if [[ -d ./.venv && -f ./.venv/bin/activate ]]; then
-            echo "Activating virtual env"
-            source ./.venv/bin/activate
-        fi
-    else
-        # deactivate virtual env when going out of its directory, including sub-dirs
-        parentdir="$(dirname "$VIRTUAL_ENV")"
-        if [[ "$PWD"/ != "$parentdir"/* ]]; then
-            echo "Deactivating virtual env"
-            deactivate
-        fi
-    fi
 }
 
 function virtual_env_info() {

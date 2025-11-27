@@ -40,13 +40,7 @@ PROMPT_BASE="$PROMPT"
 autoload -Uz add-zsh-hook
 add-zsh-hook precmd update_prompt
 
-# Hook to auto activate/deactivate python virtual envs on change pwd
-add-zsh-hook chpwd virtual_env_activate
-# Execute this when shell loads, if already in a dir with venv it activates
-virtual_env_activate
-
 # Load mise environment
-if command -v mise > /dev/null; then
+if command -v mise >/dev/null; then
     eval "$(mise activate zsh)"
 fi
-

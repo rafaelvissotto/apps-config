@@ -1,13 +1,13 @@
 [Appearance]
+BorderWhenActive=true
 ColorScheme=Breeze
-DimmValue=50
+FocusBorderColor=57,148,196
 
 [Cursor Options]
 CursorShape=0
 
 [General]
 Command=/bin/zsh
-DimWhenInactive=true
 Name=dark
 Parent=FALLBACK/
 
@@ -16,3 +16,4 @@ UnderlineFilesEnabled=true
 
 [Scrolling]
 HistorySize=10000
+ScrollBarPosition=2

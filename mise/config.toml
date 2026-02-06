@@ -1,10 +1,12 @@
 [tools]
 gitleaks = "latest"
 go = "1"
+k6 = "1"
 lazydocker = "latest"
 lazygit = "latest"
 node = "25"
 prettier = "3"
+redis-cli = "8"
 ruff = "latest"
 rust = "1"
 rust-analyzer = "latest"

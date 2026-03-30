@@ -17,6 +17,7 @@ zstyle ':omz:update' mode reminder
 plugins=(
     colored-man-pages
     fzf
+    fzf-tab
     kubectl
     git
     mise

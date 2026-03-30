@@ -5,6 +5,13 @@
     branch = master
     ignore = none
     shallow = true
+[submodule "zsh/custom/plugins/fzf-tab"]
+	path = zsh/custom/plugins/fzf-tab
+	url = https://github.com/Aloxaf/fzf-tab
+    update = checkout
+    branch = master
+    ignore = none
+    shallow = true
 [submodule "zsh/custom/plugins/zsh-autosuggestions"]
     path = zsh/custom/plugins/zsh-autosuggestions
     url = https://github.com/zsh-users/zsh-autosuggestions
